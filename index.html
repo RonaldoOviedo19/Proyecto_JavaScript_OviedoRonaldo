@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Star Wars</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" data-seccion="planetas">Planetas</a></li>
+                <li><a href="#" data-seccion="naves">Naves Espaciales</a></li>
+                <li><a href="#" data-seccion="vehiculos">vehículos</a></li>
+                <li><a href="#" data-seccion="personajes">Personajes</a></li>
+                <li><a href="#" data-seccion="peliculas">Películas</a></li>
+                <li><a href="#" data-seccion="especies">Especies</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>bienvenidos al mundo de starwars</h1>
+    </section>
+    <div id="filtros-personajes" class="filtros" style="display: none;">
+        <!-- Botones de filtro para la sección Personajes -->
+        <button onclick="consultarDatosPersonajes('gender', 'male')">Mostrar personajes masculinos</button>
+        <button onclick="consultarDatosPersonajes('gender', 'female')">Mostrar personajes femeninos</button>
+        <button onclick="consultarDatosPersonajes('hair_color', 'brown')">Mostrar personajes con cabello marrón</button>
+        <button onclick="consultarDatosPersonajes('eye_color', 'blue')">Mostrar personajes con ojos azules</button>
+        <button onclick="consultarDatosPersonajes('mass',70)">Mostrar personajes con masa mayor a 70</button>
+    </div>
+    <div id="filtros-planetas" class="filtros" style="display: none;">
+        <!-- Botones de filtro para la sección Planetas -->
+        <button onclick="consultarDatosPlanetas('orbital_period', 250)">Mostrar planetas con período orbital mayor a 250</button>
+        <button onclick="consultarDatosPlanetas('terrain', 'desert')">Mostrar planetas con terreno desértico</button>
+        <button onclick="consultarDatosPlanetas('climate', 'temperate')">Mostrar planetas con clima templado</button>
+        <button onclick="consultarDatosPlanetas('diameter', 6000)">Mostrar planetas con diámetro mayor a 6000</button>
+        <button onclick="consultarDatosPlanetas('climate', 'frozen')">Mostrar planetas con clima congelado</button>
+    </div>
+    <div id="filtros-naves" class="filtros" style="display: none;">
+        <button onclick="consultarDatosNaves('cost_in_credits', 5000000)">Mostrar naves con costo menor a 5,000,000</button>
+        <button onclick="consultarDatosNaves('cargo_capacity', 4000000)">Mostrar naves con capacidad de carga menor a 4,000,000</button>
+        <button onclick="consultarDatosNaves('consumables', '1 year')">Mostrar naves con consumibles de 1 año</button>
+        <button onclick="consultarDatosNaves('passengers', 600)">Mostrar naves con capacidad de pasajeros menor a 600</button>
+        <button onclick="consultarDatosNaves('hyperdrive_rating', 2.0)">Mostrar naves con hiperdrive 2.0</button>
+    </div>
+    <div id="filtros-vehiculos" class="filtros" style="display: none;">
+        <button onclick="consultarDatosVehiculos('cargo_capacity', 50000)">Mostrar vehículos con capacidad de carga menor a 50,000</button>
+        <button onclick="consultarDatosVehiculos('consumables', '2 days')">Mostrar vehículos con consumibles de 2 dias</button>
+        <button onclick="consultarDatosVehiculos('passengers', 30)">Mostrar vehículos con capacidad de pasajeros mayor a 30</button>
+        <button onclick="consultarDatosVehiculos('max_atmosphering_speed', 60)">Mostrar vehículos con velocidad mayor a 60</button>
+        <button onclick="consultarDatosVehiculos('vehicle_class', 'repulsorcraft')">Mostrar vehículos de clase Repulsorcraft</button>
+    </div>
+    <div id="filtros-peliculas" class="filtros" style="display: none;">
+        <button onclick="consultarDatosPeliculas('director', 'r')">Mostrar peliculas que el nombre de su director empiece con R</button>
+        <button onclick="consultarDatosPeliculas('producer')">Mostrar peliculas donde haya participado el productor con mas participación</button>
+        <button onclick="consultarDatosPeliculas('producerini', 'g')">Mostrar peliculas que el nombre de su productor empiece con G</button>
+    </div>
+    <div id="filtros-especies" class="filtros" style="display: none;">
+        <button onclick="consultarDatosEspecies('classification', 'mammal')">Mostrar especies que su clasificacion sea Mamífero</button>
+        <button onclick="consultarDatosEspecies('lenguaje', 'Galactic Basic')">Mostrar las especies que su lenguaje sea  Galactic Basic</button>
+        <button onclick="consultarDatosEspecies('eyes', 'blue')">Mostrar especies que su color de ojos sea azul</button>
+        <button onclick="consultarDatosEspecies('average', 100)">Mostrar especies que su promedio de altura sea menor a 1 metro</button>
+        <button onclick="consultarDatosEspecies('skin', 'green')">Mostrar especies que su piel sea verde</button>
+    </div>
+    <main id="resultados" class="contenedor-resultados"></main>
+    <script src="apps.js"></script>
+</body>
+</html>
